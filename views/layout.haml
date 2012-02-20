@@ -11,7 +11,7 @@
     %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
     = haml :analytics, :layout => false
 
-  %body(class="#{@template}")
+  %body(class="#{@page ? @page.template : 'page'}")
     .container
       .header
         %h1= @title
