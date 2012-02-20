@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    - if @description
+      %meta(name="description" content=@description)
+    %title= @title
+    %link(href="/clean/css/bootstrap.min.css" media="screen" rel="stylesheet")
+    %link(href="/clean/css/pygments.css" media="screen" rel="stylesheet")
+    %link(href="/css/master.css" media="screen" rel="stylesheet" type="text/css")
+    %link(href="/articles.xml" rel="alternate" type="application/atom+xml")
+    = haml :analytics, :layout => false
+
+  %body(class="#{@template}")
+    .container
+      .header
+        %h1= @title
+        .nav
+          %a(href="/") home
+      .content
+        = yield
+      %footer
+        = haml :footer, :layout => false
+
+    .analytics= haml :analytics, :layout => false

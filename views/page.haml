@@ -1,0 +1,16 @@
+.article
+
+  .date= format_date(@page.date)
+  .clear
+  .toc= toc(@page)
+  
+  .body
+    ~ @page.to_html(self)
+
+  .author
+    %a(href="http://twitter.com/#!/#{ENV['NESTA_AUTHOR__TWITTER']}")
+      = "- #{Nesta::Config.author['name']}"
+      %img(src="/clean/images/twitter-bird.png")
+  .clear
+
+  .comments= haml :comments, :layout => false
