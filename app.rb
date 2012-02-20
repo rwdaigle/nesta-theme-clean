@@ -1,5 +1,10 @@
 require 'nokogiri'
 require 'rack/pygmoku'
+require 'rubypython'
+
+# Default python (2.7) seems to have issues on Heroku:
+# https://github.com/tmm1/pygments.rb/issues/10
+RubyPython.configure :python_exe => 'python2.6'
 
 # Maruku gives us auto-ids w/ H2 elements (for use by TOC generation)
 Tilt.prefer Tilt::MarukuTemplate
