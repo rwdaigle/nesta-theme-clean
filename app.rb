@@ -1,9 +1,14 @@
 require 'nokogiri'
+require 'rack/pygmoku'
 
+# Maruku gives us auto-ids w/ H2 elements (for use by TOC generation)
 Tilt.prefer Tilt::MarukuTemplate
 
 module Nesta
   class App
+
+    # Support pygments syntax highlighting w/ <pre><code lang="ruby"></code></pre> blocks
+    use Rack::Pygmoku, { :lexer_attr => 'lang' }
 
     # Route to theme assets
     use Rack::Static, :urls => ["/clean", "/favicon.ico", "/apple-touch-icon.png", "/apple-touch-icon-precomposed.png"], :root => "themes/clean/public"
