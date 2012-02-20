@@ -1,4 +1,4 @@
-- if ENV['RACK_ENV'] == 'production' && google_analytics_code = ENV['NESTA_PRODUCTION__GOOGLE_ANALYTICS_CODE']
+- if google_analytics_code = ENV['NESTA_PRODUCTION__GOOGLE_ANALYTICS_CODE']
   :javascript
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '#{google_analytics_code}']);
