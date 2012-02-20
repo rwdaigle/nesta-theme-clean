@@ -1,4 +1,4 @@
-- if toc_headers.any?
+- if toc_headers && toc_headers.any?
   %h1 Contents
   %ol
     - toc_headers.each do |id, header|

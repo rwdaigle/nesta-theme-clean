@@ -1,15 +1,20 @@
 .left
-  %a(href="https://twitter.com/#!/#{ENV['']}")
-    %img(src="/clean/images/twitter.png")
-  %a(href="https://github.com/rwdaigle")
-    %img(src="/clean/images/github.png")
-  %a(href="http://www.linkedin.com/in/rwdaigle")
-    %img(src="/clean/images/linkedin.png")
-  %a(href="http://feeds.feedburner.com/RyansScraps")
+  - if twitter = ENV['NESTA_AUTHOR__TWITTER']
+    %a(href="https://twitter.com/#!/#{ENV['NESTA_AUTHOR__TWITTER']}")
+      %img(src="/clean/images/twitter.png")
+  - if github = ENV['NESTA_AUTHOR__GITHUB']
+    %a(href="https://github.com/#{ENV['NESTA_AUTHOR__GITHUB']}")
+      %img(src="/clean/images/github.png")
+  - if linkedin = ENV['NESTA_AUTHOR__LINKEDIN']
+    %a(href="http://www.linkedin.com/in/#{ENV['NESTA_AUTHOR__LINKEDIN']}")
+      %img(src="/clean/images/linkedin.png")
+  %a(href="#{ENV['NESTA_FEED_URL'] || '/articles.xml' }")
     %img(src="/clean/images/feed.png")
-  %a(href="mailto:ryan.daigle@gmail.com")
-    %img(src="/clean/images/email.png")
+  - if email = Nesta::Config.author['email']
+    %a(href="mailto:#{email}")
+      %img(src="/clean/images/email.png")
 
 .right
-  %a(href="http://heroku.com")
-    %img(src="/clean/images/heroku.png")
+  -if ENV['NESTA_POWERED_BY']
+    %a(href="http://heroku.com")
+      %img(src="/clean/images/heroku.png")
