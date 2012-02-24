@@ -1,6 +1,6 @@
 .article
 
-  .date= format_date(@page.date)
+  .date= format_date(@page.date) if @page.date
   .clear
   .toc= toc(@page)
   

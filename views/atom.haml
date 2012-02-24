@@ -18,7 +18,7 @@
         %email= @author['email']
   - @articles.each do |article|
     %entry
-      %title= article.heading
+      %title= article.title
       %link{ :href => url_for(article), :type => 'text/html', :rel => 'alternate' }
       %id= atom_id(article)
       %content(type='html')&= find_and_preserve(absolute_urls(article.body(self)))
