@@ -2,7 +2,7 @@ $dark-grey: #999
 $light-grey: #CCC
 $font-size: 14px
 $small-font-size: 12px
-$tiny-font-size: 12px
+$tiny-font-size: 11px
 $meta-font-family: Courier
 
 .container
@@ -38,30 +38,34 @@ ol.index
 
   .header, .arrow
     color: $dark-grey
-    min-width: 130px
     font-family: $meta-font-family
-    font-size: 13px
+    font-size: $small-font-size
+    vertical-align: top
 
   .header
     float: left
-    min-width: 130px
+    min-width: 115px
 
   .arrow
     margin: 0 5px
 
-  .main .description
-    font-size: $tiny-font-size
+  .main
+    font-size: $font-size
     color: $light-grey
     margin: 0 0 0 10px
+    display: inline-block
+    max-width: 55%
+    line-height: 1.3em
 
   .meta
     float: right
     color: $light-grey
     font-size: $small-font-size
+    vertical-align: top
 
     a
       color: $light-grey
-      font-size: $small-font-size
+      font-size: $tiny-font-size
 
 .article
   
@@ -86,6 +90,10 @@ ol.index
 
   code
     color: #666
+
+  img
+    padding: 10px
+    border: 1px solid #DDD
 
   .date
     color: $light-grey
@@ -117,18 +125,16 @@ ol.index
       color: $dark-grey
 
   .note
-    background: #FAFAFA
+    background: #F0F5F9
     border: 1px solid #D0DBE6
     -moz-border-radius: 3px
     -webkit-border-radius: 3px
     border-radius: 3px
-    color: #888
-    margin: 0 0 22px 0
-    padding: 12px
-    font-family: courier
+    color: #777
+    margin: 30px 15px
+    padding: 10px 20px 10px 20px
     letter-spacing: normal
-    line-height: 1.4em
-    font-size: 0.9em
+    line-height: 1.5em
 
     a
       color: #08A
@@ -141,6 +147,8 @@ ol.index
 
     img
       vertical-align: middle
+      border: 0px
+      padding: 0px
 
     a
       color: $light-grey
@@ -175,21 +183,18 @@ ol.index
         width: 24px
         height: 24px
 
-.highlight
-  padding: 10px 10px 10px 15px
-  -webkit-border-radius: 10px
-  -moz-border-radius: 10px
-  border-radius: 10px
-  margin-bottom: 30px
+  .highlight
+    padding: 10px 10px 10px 15px
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+    margin-bottom: 30px
 
-  pre
-    background: inherit
-    -webkit-border-radius: 10px
-    -moz-border-radius: 10px
-    border-radius: 10px
-    border: 0px
-    margin: 0px
-    padding: 0px
+    pre
+      background: inherit
+      border: 0px
+      margin: 0px
+      padding: 0px
 
 footer
   border-top: 2px solid #EEE
