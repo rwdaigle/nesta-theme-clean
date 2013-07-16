@@ -1,6 +1,6 @@
 .left
   - if twitter = ENV['NESTA_AUTHOR__TWITTER']
-    %a(href="https://twitter.com/#!/#{ENV['NESTA_AUTHOR__TWITTER']}")
+    %a(href="https://twitter.com/#{ENV['NESTA_AUTHOR__TWITTER']}")
       %img(src="/clean/images/twitter.png")
   - if github = ENV['NESTA_AUTHOR__GITHUB']
     %a(href="https://github.com/#{ENV['NESTA_AUTHOR__GITHUB']}")
