@@ -1,20 +1,20 @@
 .left
   - if twitter = ENV['NESTA_AUTHOR__TWITTER']
     %a(href="https://twitter.com/#{ENV['NESTA_AUTHOR__TWITTER']}")
-      %img(src="/clean/images/twitter.png")
+      %img(src="/clean/images/webicon-twitter.svg")
   - if github = ENV['NESTA_AUTHOR__GITHUB']
     %a(href="https://github.com/#{ENV['NESTA_AUTHOR__GITHUB']}")
-      %img(src="/clean/images/github.png")
+      %img(src="/clean/images/webicon-github.svg")
   - if linkedin = ENV['NESTA_AUTHOR__LINKEDIN']
     %a(href="http://www.linkedin.com/in/#{ENV['NESTA_AUTHOR__LINKEDIN']}")
-      %img(src="/clean/images/linkedin.png")
+      %img(src="/clean/images/webicon-linkedin.svg")
   %a(href="#{ENV['NESTA_FEED_URL'] || '/articles.xml' }")
-    %img(src="/clean/images/feed.png")
+    %img(src="/clean/images/webicon-rss.svg") 
   - if email = Nesta::Config.author['email']
     %a(href="mailto:#{email}")
-      %img(src="/clean/images/email.png")
+      %img(src="/clean/images/webicon-mail.svg")
 
 .right
   -if ENV['NESTA_POWERED_BY']
     %a(href="http://heroku.com")
-      %img(src="/clean/images/heroku.png")
+      %img(src="/clean/images/heroku.svg")

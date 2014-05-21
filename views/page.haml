@@ -5,10 +5,13 @@
   .toc= toc(@page)
   
   .body
+    - if @page.metadata("youtube")
+      %iframe(width="640" height="390" src="//www.youtube.com/embed/#{@page.metadata("youtube")}" frameborder="0" allowfullscreen="allowfullscreen")
+      
     ~ @page.to_html(self)
 
   .author
-    %a(href="http://twitter.com/#!/#{ENV['NESTA_AUTHOR__TWITTER']}")
+    %a(href="http://twitter.com/#{ENV['NESTA_AUTHOR__TWITTER']}")
       = "- #{Nesta::Config.author['name']}"
       %img(src="/clean/images/twitter-bird.png")
   .clear
